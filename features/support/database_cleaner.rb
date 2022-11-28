@@ -2,7 +2,7 @@
 
 begin
   Before do |_|
-    DatabaseCleaner.strategy = [:truncation, { except: %w[ntust_departments countries institutions industries] }]
+    DatabaseCleaner.strategy = [:truncation]
   end
 
   After do |_|
