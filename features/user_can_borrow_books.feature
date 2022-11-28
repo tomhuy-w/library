@@ -14,3 +14,8 @@ Feature: User can borrow books
     And I borrow "Clean Code" book
     Then I can see "borrowed successfully"
     And I can see "Clean Code" remaining amount is 1
+
+  Scenario: User borrow the book without login
+    When I open landing page
+    And I borrow "Clean Code" book
+    Then I can see "You need to sign in or sign up before continuing."
