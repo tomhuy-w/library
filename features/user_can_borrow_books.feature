@@ -19,3 +19,10 @@ Feature: User can borrow books
     When I open landing page
     And I borrow "Clean Code" book
     Then I can see "You need to sign in or sign up before continuing."
+
+  Scenario: User borrows no remaining quantity book
+    Given there is a user logged in
+    When I open landing page
+    And I borrow "Domain-Driven Design" book
+    Then I can see "Book has no remaining quantity"
+
