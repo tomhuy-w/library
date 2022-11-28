@@ -5,6 +5,8 @@ class BorrowerRecordsController < ApplicationController
   def create
     BookService.new(@book, current_user).borrow!
     redirect_to books_path, notice: 'borrowed successfully'
+  rescue StandardError => e
+    redirect_to books_path, alert: e.message
   end
 
   private

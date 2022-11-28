@@ -25,4 +25,3 @@ Feature: User can borrow books
     When I open landing page
     And I borrow "Domain-Driven Design" book
     Then I can see "Book has no remaining quantity"
-
