@@ -2,9 +2,10 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :books
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+  resources :books do
+    member do
+      resources :borrower_records, shallow: true, only: [:create]
+    end
+  end
   root to: 'books#index'
 end

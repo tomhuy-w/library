@@ -26,7 +26,8 @@
 
   <p>
     <strong>Quntity:</strong>
-    <%= book.quntity %>
+    <%= book.quantity %>
   </p>
 
+  <%= button_to('borrow', borrower_records_path(book.id), method: :post) %>
 </div>
