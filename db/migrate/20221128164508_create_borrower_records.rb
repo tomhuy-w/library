@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBorrowerRecords < ActiveRecord::Migration[7.0]
   def change
     create_table :borrower_records do |t|
