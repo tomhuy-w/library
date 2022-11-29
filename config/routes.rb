@@ -2,10 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :books do
-    member do
-      resources :borrower_records, shallow: true, only: [:create]
-    end
+  resources :borrower_records, only: [:index]
+  resources :books, shallow: true do
+    resources :borrower_records, only: [:create, :destroy]
   end
   root to: 'books#index'
 end

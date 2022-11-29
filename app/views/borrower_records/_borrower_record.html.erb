@@ -1,0 +1,13 @@
+<div id="<%= dom_id borrower_record %>">
+  <p>
+    <strong>Book:</strong>
+    <%= borrower_record.book.title %>
+  </p>
+
+  <p>
+    <strong>Borrowed at:</strong>
+    <%= borrower_record.created_at %>
+  </p>
+
+  <%= button_to('return', borrower_record_path(borrower_record.id), method: :delete) %>
+</div>
