@@ -2,15 +2,14 @@
 
 class BorrowerRecordsController < ApplicationController
   before_action :set_book, only: [:create]
-  before_action :set_borrower_record, only: [:destroy, :return]
+  before_action :set_borrower_record, only: %i[destroy return]
   before_action :authenticate_user!
 
   def index
     @borrower_records = current_user.borrower_records.includes(:book).where(returned_at: nil)
   end
 
-  def return
-  end
+  def return; end
 
   def create
     BookService.new(book: @book, user: current_user).borrow!
