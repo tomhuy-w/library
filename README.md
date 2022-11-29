@@ -11,6 +11,7 @@
 * Configuration
 ```sh
 bundle install
+yarn install
 rails db:migrate
 bin/dev
 ```
