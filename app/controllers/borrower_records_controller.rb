@@ -6,7 +6,7 @@ class BorrowerRecordsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @borrower_records = current_user.borrower_records.includes(:book)
+    @borrower_records = current_user.borrower_records.includes(:book).where(returned_at: nil)
   end
 
   def create
