@@ -12,8 +12,10 @@ Feature: User can return books
       | title      | quantity |
       | Clean Code | 1        |
 
-  Scenario: User returns the book
+  Scenario: User returns the book and rate
     When I visit "/borrower_records"
     And I return "Clean Code" book
+    And I fill "rate" with "3"
+    And I click "return"
     Then I can see "Returned successfully"
     And I can not see "Clean Code"
