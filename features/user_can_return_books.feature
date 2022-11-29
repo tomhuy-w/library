@@ -16,3 +16,4 @@ Feature: User can return books
     When I visit "/borrower_records"
     And I return "Clean Code" book
     Then I can see "Returned successfully"
+    And I can not see "Clean Code"
