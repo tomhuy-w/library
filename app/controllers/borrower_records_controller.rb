@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BorrowerRecordsController < ApplicationController
   before_action :set_book, only: [:create]
   before_action :set_borrower_record, only: [:destroy]

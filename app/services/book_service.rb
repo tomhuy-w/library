@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookService
   def initialize(book: nil, user: nil, borrower_record: nil)
     @book = book

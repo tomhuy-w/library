@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Given('Library has these books') do |table|
   table.hashes.each do |attrs|
     Book.create!(attrs)
