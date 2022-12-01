@@ -9,6 +9,7 @@ class BookService
 
   def borrow!
     raise(StandardError, 'Book has no remaining quantity') unless @book.can_borrow?
+    raise(StandardError, 'You cannot borrow the same book') if @user.borrower_records.find_by(book_id: @book.id)
 
     ActiveRecord::Base.transaction do
       BorrowerRecord.create!(user: @user, book: @book)
