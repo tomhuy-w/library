@@ -25,3 +25,11 @@ Feature: User can borrow books
     When I open landing page
     And I borrow "Domain-Driven Design" book
     Then I can see "Book has no remaining quantity"
+
+  Scenario: User cannot borrow the same book
+    Given there is a user logged in
+    When I open landing page
+    And I borrow "Clean Code" book
+    And I borrow "Clean Code" book
+    Then I can see "You cannot borrow the same book"
+
