@@ -9,5 +9,5 @@
     <%= borrower_record.created_at %>
   </p>
 
-  <%= button_to('return', borrower_record_path(borrower_record.id), method: :delete) %>
+  <%= link_to('return', borrower_record_return_path(borrower_record.id)) %>
 </div>
