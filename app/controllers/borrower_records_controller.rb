@@ -20,6 +20,7 @@ class BorrowerRecordsController < ApplicationController
 
   def destroy
     BookService.new(borrower_record: @borrower_record).return!
+    @borrower_record.update!(rate: params[:rate])
     redirect_to borrower_records_path, notice: 'Returned successfully'
   end
 
