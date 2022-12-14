@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :borrower_records
+      resources :books
+      resources :users
+
+      root to: "borrower_records#index"
+    end
   devise_for :users
   resources :borrower_records, only: [:index]
   resources :books, shallow: true do
