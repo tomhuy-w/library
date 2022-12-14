@@ -11,6 +11,7 @@ class BookDashboard < Administrate::BaseDashboard
     id: Field::Number,
     author: Field::String,
     borrower_records: Field::HasMany,
+    rate: Field::Number,
     edition: Field::Number,
     picture_url: Field::String,
     publisher: Field::String,
@@ -45,6 +46,7 @@ class BookDashboard < Administrate::BaseDashboard
     quantity
     title
     year
+    rate
     created_at
     updated_at
   ].freeze
