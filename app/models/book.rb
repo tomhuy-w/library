@@ -7,4 +7,8 @@ class Book < ApplicationRecord
   def can_borrow?
     quantity.positive?
   end
+
+  def rate
+    borrower_records.where.not(rate: nil).average(:rate)
+  end
 end
