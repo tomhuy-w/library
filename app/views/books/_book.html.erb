@@ -29,5 +29,10 @@
     <%= book.quantity %>
   </p>
 
+  <p>
+    <strong>Rate:</strong>
+    <%= book.rate || '-' %>
+  </p>
+
   <%= button_to('borrow', book_borrower_records_path(book.id), method: :post) %>
 </div>
