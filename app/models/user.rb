@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :borrower_records, dependent: :destroy
+
+  def admin?
+    role == 'admin'
+  end
 end
