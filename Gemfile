@@ -80,3 +80,5 @@ end
 
 gem 'administrate'
 gem 'devise'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '2.x'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '2.x'
